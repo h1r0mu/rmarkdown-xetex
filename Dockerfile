@@ -2,7 +2,7 @@ FROM debian:latest
 COPY requirements.R /src/requirements.R
 WORKDIR /src
 RUN apt update \
-  && apt install -y lsb-release gnupg gnupg1 gnupg2 \
+  && apt install -y git lsb-release gnupg gnupg1 gnupg2 \
   && echo "deb https://cran.rstudio.com/bin/linux/debian $(lsb_release -cs)-cran35/" | tee -a /etc/apt/sources.list \
   && echo "deb http://deb.debian.org/debian buster main contrib non-free" | tee -a /etc/apt/sources.list \ 
   && echo "deb-src http://deb.debian.org/debian buster main contrib non-free" | tee -a /etc/apt/sources.list \ 
